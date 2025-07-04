@@ -27,9 +27,9 @@ const App = () => {
           className="flex
         gap-3"
         >
-          <IncrementBtn setCount={() => setCount(count + 1)} />
-          <ResetBtn setCount={() => setCount(0)} />
           <DecrementBtn setCount={() => setCount(count - 1)} />
+          <ResetBtn setCount={() => setCount(0)} />
+          <IncrementBtn setCount={() => setCount(count + 1)} />
         </div>
       </div>
 
