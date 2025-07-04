@@ -1,10 +1,45 @@
 import { useState } from "react";
-import FavGen from "./components/favGen";
-import Res from "./components/Res";
+import IncrementBtn from "./components/IncrementBtn";
+import DecrementBtn from "./components/DecrementBtn";
+import ResetBtn from "./components/reset";
+
 const App = () => {
+  const [count, setCount] = useState(0);
   return (
-    <div>
-      <h1 className="capitalize font-bold text-2xl m-4 ">favicon generator</h1>
+    <>
+      <div className="px-5 py-3">
+        <div className="max-w-90">
+          <h1 className="font-bold text-3xl mx-auto w-fit">Counter</h1>
+          <h2
+            className={`mt-5 mb-5 bg-gray-400 mx-auto w-fit px-3 py-1.5 font-bold text-2xl rounded-md ${
+              count > 0
+                ? "text-green-300"
+                : count < 0
+                ? "text-red-400"
+                : "text-blue-400"
+            }`}
+          >
+            {count}
+          </h2>
+        </div>
+
+        <div
+          className="flex
+        gap-3"
+        >
+          <IncrementBtn setCount={() => setCount(count + 1)} />
+          <ResetBtn setCount={() => setCount(0)} />
+          <DecrementBtn setCount={() => setCount(count - 1)} />
+        </div>
+      </div>
+
+      {/* ==================================
+===================================
+================================
+=============================
+ */}
+
+      {/* <h1 className="capitalize font-bold text-2xl m-4 ">favicon generator</h1>
       <div
         className=" m-4 md:flex gap-5
     "
@@ -46,8 +81,8 @@ const App = () => {
             " Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, eaque ex! Vero asperiores neque explicabo?"
           }
         />
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 };
 
